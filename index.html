@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Import Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- Import cofig file -->
+    <script src="./tailwind.config.js"></script>
+    <!-- Import our data file -->
+    <script src="./data.js"></script>
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>OW2 Heros</title>
+  </head>
+  <body
+    class="min-h-screen font-inter p-8 bg-gradient-to-b from-blue-50 to-blue-100"
+  >
+    <div
+      x-data="data()"
+      class="flex flex-col container mx-auto items-center gap-10"
+    >
+      <template x-for="role in data.roles">
+        <div class="flex flex-col p-4 gap-4 items-center">
+          <h1
+            x-text="role.roleName"
+            class="text-center text-slate-950 text-4xl text- font-extrabold"
+          ></h1>
+          <!-- Hero cards -->
+          <div class="flex flex-wrap justify-center items-center gap-4">
+            <template x-for="hero in role.heroes">
+              <!-- Hero card -->
+              <div
+                class="flex w-80 p-3 items-center gap-3 rounded-3xl bg-gradient-to-b from-slate-50 to-slate-200 shadow-skeu-sm hover:shadow-skeu-lg transition-shadow ease-out duration-1000 cursor-pointer"
+              >
+                <img
+                  x-bind:src="hero.avatarUrl"
+                  alt=""
+                  class="w-[88px] h-[88] rounded-xl border-[.5px] border-slate-200 shadow-sm"
+                />
+                <p
+                  class="text-2xl font-black text-slate-800"
+                  x-text="hero.name"
+                ></p>
+              </div>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
+  </body>
+</html>
