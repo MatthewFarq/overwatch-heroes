@@ -399,11 +399,34 @@ const HERO_DATA = [
     name: "Wrecking Ball",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      { name: "Quad Cannons", description: "Automatic assault weapons." },
+      {
+        name: "Grappling Claw",
+        description:
+          "Launch a grappling claw to rapidly swing around the area. Enables high speed collisions to damage and knockback enemies.",
+      },
+      {
+        name: "Roll",
+        description:
+          "Transform into a ball and increase maximum movement speed.",
+      },
+      {
+        name: "Piledriver",
+        description:
+          "Slam into the ground below to damage and launch enemies upward.",
+      },
+      {
+        name: "Adaptive Shield",
+        description:
+          "Create temporary personal extra helath. Amount increases with more enemies nearby.",
+      },
+      {
+        name: "Minefield (Ultimate)",
+        description: "Deploy a massive field of proximity mines.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [3, 7, 13, 17, 18],
+    weakAgainstIds: [7, 24, 29, 31],
     wikiPageUrl: "https://oijgdfigj",
   },
 
