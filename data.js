@@ -436,11 +436,31 @@ const HERO_DATA = [
     name: "Zarya",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Particle Cannon",
+        description:
+          "Primary fire: Short-range linear beam weapon. Secondary fire: Energy grenade launcher.",
+      },
+      {
+        name: "Particle Barrier",
+        description: "Create a damage barrier around you.",
+      },
+      {
+        name: "Projected Barrier",
+        description: "Create a damage barrier around an ally.",
+      },
+      {
+        name: "Graviton Surge",
+        description: "Launch a gravity well that pulls enemies to it.",
+      },
+      {
+        name: "Energy",
+        description:
+          "Damage blocked by barriers increases Particle Cannon damage",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [1, 16, 18, 25, 38],
+    weakAgainstIds: [6, 28, 30],
     wikiPageUrl: "https://oijgdfigj",
   },
 
