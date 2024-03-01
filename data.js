@@ -471,11 +471,29 @@ const HERO_DATA = [
     name: "Ashe",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "The Viper",
+        description:
+          "Primary fire: Semi-automatic rifle. Secondary fire: Hold to zoom in, increasing damage and accuracy but slower rate of fire.",
+      },
+      {
+        name: "Coach Gun",
+        description:
+          "Blast enemies in front of you and knock yourself backwards.",
+      },
+      {
+        name: "Dynamite",
+        description:
+          "Throw an explosive that detonates after a short delay or immediately when shot.",
+      },
+      {
+        name: "B.O.B.",
+        description:
+          "Deploy Bob. He charges forward and knocks enemies into the air, then attacks with his arm cannons.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [0, 15, 20, 28, 29],
+    weakAgainstIds: [1, 28, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
