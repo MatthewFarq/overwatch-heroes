@@ -301,11 +301,27 @@ const HERO_DATA = [
     name: "Roadhog",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Scrap Gun",
+        description:
+          "Short-range spread weapon with a medium-range shrapnel volley.",
+      },
+      { name: "Chain Hook", description: "Drag a targeted enemy to you." },
+      {
+        name: "Take A Breather",
+        description: "Heal yourself and reduce damage taken.",
+      },
+      {
+        name: "Pig Pen",
+        description: "Launch a trap that slows and damages nearby enemies.",
+      },
+      {
+        name: "Whole Hog (Ultimate)",
+        description: "Damage and knock back enemies in front of you.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [3, 7, 9, 11, 15, 27, 30],
+    weakAgainstIds: [7, 21, 29],
     wikiPageUrl: "https://oijgdfigj",
   },
 
