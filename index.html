@@ -26,12 +26,11 @@
     <title>OW2 Heros</title>
   </head>
   <body
+    x-data="data()"
+    :class="data.isOpen ? 'overflow-hidden' : ''"
     class="min-h-screen font-inter p-8 bg-gradient-to-b from-blue-50 to-blue-100"
   >
-    <div
-      x-data="data()"
-      class="flex flex-col container mx-auto items-center gap-10"
-    >
+    <div class="flex flex-col container mx-auto items-center gap-10">
       <!-- *************** -->
       <!-- HERO CARDS -->
       <!-- *************** -->
@@ -108,7 +107,7 @@
             ></p>
             <p
               class="text-2xl font-bold text-slate-700"
-              x-text="data.currentHero.role.label"
+              x-text="data.currentHero.role?.label"
             ></p>
           </div>
         </div>
