@@ -352,7 +352,7 @@ const HERO_DATA = [
           "Hold to propel a floating barrier; release to stop. Press again to recall the barrier to you.",
       },
       {
-        name: "Gravitic Flux",
+        name: "Gravitic Flux (Ultimate)",
         description:
           "Manipulate gravity to lift enemies into the air and slam them back down.",
       },
@@ -368,11 +368,28 @@ const HERO_DATA = [
     name: "Winston",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Tesla Cannon",
+        description:
+          "Primary fire: Electric frontal-cone weapon. Secondary fire: Hold to charge, release to fire focused electricity.",
+      },
+      {
+        name: "Jump Pack",
+        description:
+          "Leap forward into the air. Landing on an enemy damages them.",
+      },
+      {
+        name: "Barrier Projector",
+        description: "Deploy a protective energy dome.",
+      },
+      {
+        name: "Primal Rage (Ultimate)",
+        description:
+          "Gain immense health, but you can only leap and punch enemies.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [4, 5, 8, 23, 28, 29, 33],
+    weakAgainstIds: [7, 21, 36],
     wikiPageUrl: "https://oijgdfigj",
   },
 
