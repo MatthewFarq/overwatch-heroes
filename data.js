@@ -331,11 +331,34 @@ const HERO_DATA = [
     name: "Sigma",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Hypershperes",
+        description:
+          "Launch two charges wich implode after a short duration, dealing damage in an area.",
+      },
+      {
+        name: "Kinetic Grasp",
+        description:
+          "Absorb projectiles in front of you and convert them into extra health.",
+      },
+      {
+        name: "Accretion",
+        description:
+          "Gather a mass of debris and throw it at an enemy to knowck them down.",
+      },
+      {
+        name: "Experimental Barrier",
+        description:
+          "Hold to propel a floating barrier; release to stop. Press again to recall the barrier to you.",
+      },
+      {
+        name: "Gravitic Flux",
+        description:
+          "Manipulate gravity to lift enemies into the air and slam them back down.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [13],
+    weakAgainstIds: [9, 24, 30, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
