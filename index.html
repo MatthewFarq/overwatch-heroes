@@ -68,7 +68,7 @@
       <!-- *************** -->
       <div
         x-show="data.isOpen"
-        class="fixed h-screen w-full max-w-3xl bg-slate-100 top-0 right-0 z-30 flex flex-col items-start gap-10 p-6 shadow-xl overflow-y-auto"
+        class="fixed h-screen w-full max-w-3xl bg-slate-100 top-0 right-0 z-30 flex flex-col items-start gap-10 p-6 pb-16 shadow-xl overflow-y-auto"
         @click.outside="data.isOpen = false"
         x-transition:enter="transition ease-gentle duration-500"
         x-transition:enter-start="translate-x-full"
@@ -112,25 +112,6 @@
             ></p>
           </div>
         </div>
-        <!-- Ability list -->
-        <div class="flex flex-col items-start gap-4">
-          <h2 class="text-2xl md:text-3xl font-bold color-slate-800">
-            Abilities
-          </h2>
-          <template x-for="ability in data.currentHero.abilities">
-            <!-- Single ability -->
-            <div class="flex flex-col ml-3 gap-1 md:gap-2">
-              <p
-                class="text-xl font-bold text-slate-700 md:text-2xl"
-                x-text="ability.name"
-              ></p>
-              <p
-                class="text-base font-medium text-slate-800 md:text-xl"
-                x-text="ability.description"
-              ></p>
-            </div>
-          </template>
-        </div>
         <!-- Strong against -->
         <div class="flex flex-col items-start gap-4">
           <h2 class="text-2xl md:text-3xl font-bold color-slate-800">
@@ -161,10 +142,25 @@
             </template>
           </div>
         </div>
-        <link
-          rel="stylesheet"
-          href="https://overwatch.fandom.com/wiki/Overwatch_Wiki"
-        />
+        <!-- Ability list -->
+        <div class="flex flex-col items-start gap-4">
+          <h2 class="text-2xl md:text-3xl font-bold color-slate-800">
+            Abilities
+          </h2>
+          <template x-for="ability in data.currentHero.abilities">
+            <!-- Single ability -->
+            <div class="flex flex-col ml-3 gap-1 md:gap-2">
+              <p
+                class="text-xl font-bold text-slate-700 md:text-2xl"
+                x-text="ability.name"
+              ></p>
+              <p
+                class="text-base font-medium text-slate-800 md:text-xl"
+                x-text="ability.description"
+              ></p>
+            </div>
+          </template>
+        </div>
       </div>
 
       <!-- *************** -->
