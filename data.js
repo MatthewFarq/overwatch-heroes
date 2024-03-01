@@ -190,7 +190,7 @@ const HERO_DATA = [
         description: "Heal from all damage over time dealt by wounds.",
       },
     ],
-    strongAgainstIds: [15],
+    strongAgainstIds: [],
     weakAgainstIds: [7, 19, 33],
     wikiPageUrl: "https://oijgdfigj",
   },
@@ -503,11 +503,27 @@ const HERO_DATA = [
     name: "Bastion",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Configuration: Assault",
+        description: "tA slow-moving tank with a powerful rotary cannon.",
+      },
+      {
+        name: "Configuration: Recon",
+        description: "Mobile, with a lightweight and highly accurate weapon.",
+      },
+      {
+        name: "A-36 Tactical Grenade",
+        description:
+          "Fire a bomb that bounces off walls and explodes when it impacts enemies or the ground.",
+      },
+      {
+        name: "Configuration: Artillery",
+        description:
+          "Become immobile and fire up to 3 powerful artillery shells.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [4, 6, 9],
+    weakAgainstIds: [8, 11, 27, 29, 38],
     wikiPageUrl: "https://oijgdfigj",
   },
 
