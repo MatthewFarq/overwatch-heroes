@@ -256,7 +256,7 @@ const HERO_DATA = [
           "Fire a sphere of energy that creates a slowing vortex on the ground, damaging enemies within and pulling them downward.",
       },
       {
-        name: "Annihilation",
+        name: "Annihilation (Ultimate)",
         description:
           "Enter Nemesis Form and create a deadly swarm that lashes out at nearby enemies, persisting longer when damaging enemies",
       },
@@ -272,11 +272,26 @@ const HERO_DATA = [
     name: "Reinhardt",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      { name: "Rocket Hammer", description: "Devastating melee weapon." },
+      {
+        name: "Charge",
+        description: "Charge forward and smash an enemy against a wall",
+      },
+      {
+        name: "Firer Strike",
+        description: "Launch a fiery projectile.",
+      },
+      {
+        name: "Barier Field",
+        description: "Hold up a frontal energy barrier.",
+      },
+      {
+        name: "Earthshatter (Ultimate)",
+        description: "Knock down all enemies in front of you.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [11],
+    weakAgainstIds: [4, 9, 18, 20, 29],
     wikiPageUrl: "https://oijgdfigj",
   },
 
