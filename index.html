@@ -14,6 +14,8 @@
     <script src="./tailwind.config.js"></script>
     <!-- Import our data file -->
     <script src="./data.js"></script>
+    <!-- Import our sidebar file -->
+    <script src="./sidebar.js"></script>
     <!-- Import fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,18 +32,21 @@
       x-data="data()"
       class="flex flex-col container mx-auto items-center gap-10"
     >
+      <!-- *************** -->
+      <!-- HERO CARDS -->
+      <!-- *************** -->
       <template x-for="role in data.roles">
         <div class="flex flex-col p-4 gap-4 items-center">
           <h1
             x-text="role.roleName"
             class="text-center text-slate-950 text-4xl text- font-extrabold"
           ></h1>
-          <!-- Hero cards -->
           <div class="flex flex-wrap justify-center items-center gap-4">
             <template x-for="hero in role.heroes">
               <!-- Hero card -->
               <div
-                class="flex w-80 p-3 items-center gap-3 rounded-3xl bg-gradient-to-b from-slate-50 to-slate-200 shadow-skeu-sm hover:shadow-skeu-lg transition-shadow ease-out duration-1000 cursor-pointer"
+                class="flex w-80 p-3 items-center gap-3 rounded-3xl bg-gradient-to-b from-slate-50 to-slate-200 shadow-skeu-sm hover:shadow-skeu-lg transition-shadow ease-out duration-300 cursor-pointer"
+                @click="handleClick(data, hero)"
               >
                 <img
                   x-bind:src="hero.avatarUrl"
@@ -57,6 +62,125 @@
           </div>
         </div>
       </template>
+
+      <!-- *************** -->
+      <!-- Sidebar -->
+      <!-- *************** -->
+      <div
+        x-show="data.isOpen"
+        class="fixed h-screen w-full max-w-3xl bg-slate-100 top-0 right-0 z-30 flex flex-col items-start gap-10 p-6 shadow-xl overflow-y-auto"
+        @click.outside="data.isOpen = false"
+        x-transition:enter="transition ease-gentle duration-500"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-gentle duration-500"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+      >
+        <button
+          class="items-center gap-1 rounded-full"
+          @click="data.isOpen = false"
+        >
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.7076 16.7074L7.70757 26.7074C7.51993 26.8951 7.26543 27.0005 7.00007 27.0005C6.7347 27.0005 6.48021 26.8951 6.29257 26.7074C6.10493 26.5198 5.99951 26.2653 5.99951 25.9999C5.99951 25.7346 6.10493 25.4801 6.29257 25.2924L15.5863 15.9999L6.29257 6.70745C6.10493 6.5198 5.99951 6.26531 5.99951 5.99995C5.99951 5.73458 6.10493 5.48009 6.29257 5.29245C6.48021 5.1048 6.7347 4.99939 7.00007 4.99939C7.26543 4.99939 7.51993 5.1048 7.70757 5.29245L17.7076 15.2924C17.8005 15.3853 17.8743 15.4956 17.9246 15.617C17.975 15.7384 18.0009 15.8685 18.0009 15.9999C18.0009 16.1314 17.975 16.2615 17.9246 16.3829C17.8743 16.5043 17.8005 16.6146 17.7076 16.7074ZM27.7076 15.2924L17.7076 5.29245C17.5199 5.1048 17.2654 4.99939 17.0001 4.99939C16.7347 4.99939 16.4802 5.1048 16.2926 5.29245C16.1049 5.48009 15.9995 5.73458 15.9995 5.99995C15.9995 6.26531 16.1049 6.5198 16.2926 6.70745L25.5863 15.9999L16.2926 25.2924C16.1049 25.4801 15.9995 25.7346 15.9995 25.9999C15.9995 26.2653 16.1049 26.5198 16.2926 26.7074C16.4802 26.8951 16.7347 27.0005 17.0001 27.0005C17.2654 27.0005 17.5199 26.8951 17.7076 26.7074L27.7076 16.7074C27.8005 16.6146 27.8743 16.5043 27.9246 16.3829C27.975 16.2615 28.0009 16.1314 28.0009 15.9999C28.0009 15.8685 27.975 15.7384 27.9246 15.617C27.8743 15.4956 27.8005 15.3853 27.7076 15.2924Z"
+              fill="#334155"
+            />
+          </svg>
+        </button>
+        <!-- Top hero section -->
+        <div class="flex items-center gap-3">
+          <img
+            x-bind:src="data.currentHero.avatarUrl"
+            alt=""
+            class="h-28 w-28 rounded-3xl shadow"
+          />
+          <div class="flex flex-col justify-center items-start gap-2">
+            <p
+              class="text-3xl font-black text-slate-800"
+              x-text="data.currentHero.name"
+            ></p>
+            <p
+              class="text-2xl font-bold text-slate-700"
+              x-text="data.currentHero.role.label"
+            ></p>
+          </div>
+        </div>
+        <!-- Ability list -->
+        <div class="flex flex-col items-start gap-4">
+          <h2 class="text-2xl md:text-3xl font-bold color-slate-800">
+            Abilities
+          </h2>
+          <template x-for="ability in data.currentHero.abilities">
+            <!-- Single ability -->
+            <div class="flex flex-col ml-3 gap-1 md:gap-2">
+              <p
+                class="text-xl font-bold text-slate-700 md:text-2xl"
+                x-text="ability.name"
+              ></p>
+              <p
+                class="text-base font-medium text-slate-800 md:text-xl"
+                x-text="ability.description"
+              ></p>
+            </div>
+          </template>
+        </div>
+        <!-- Strong against -->
+        <div class="flex flex-col items-start gap-4">
+          <h2 class="text-2xl md:text-3xl font-bold color-slate-800">
+            Strong against
+          </h2>
+          <div class="flex flex-wrap items-start gap-4">
+            <template x-for="avatarUrl in data.currentHero.strongAgainstHeroes">
+              <img
+                x-bind:src="avatarUrl"
+                alt=""
+                class="w-[88px] h-[88] rounded-xl border-[.5px] border-slate-200 shadow-sm"
+              />
+            </template>
+          </div>
+        </div>
+        <!-- Weak against -->
+        <div class="flex flex-col items-start gap-4">
+          <h2 class="text-2xl md:text-3xl font-bold color-slate-800">
+            Weak against
+          </h2>
+          <div class="flex flex-wrap items-start gap-4">
+            <template x-for="avatarUrl in data.currentHero.weakAgainstHeroes">
+              <img
+                x-bind:src="avatarUrl"
+                alt=""
+                class="w-[88px] h-[88] rounded-xl border-[.5px] border-slate-200 shadow-sm"
+              />
+            </template>
+          </div>
+        </div>
+        <link
+          rel="stylesheet"
+          href="https://overwatch.fandom.com/wiki/Overwatch_Wiki"
+        />
+      </div>
+
+      <!-- *************** -->
+      <!-- OVERLAY -->
+      <!-- *************** -->
+      <div
+        x-show="data.isOpen"
+        class="w-screen h-screen z-20 bg-neutral-900 opacity-75 fixed inset-0"
+        @click="data.isOpen = false"
+        x-transition:enter="transition ease-gentle duration-500"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-75"
+        x-transition:leave="transition ease-gentle duration-500"
+        x-transition:leave-start="opacity-75"
+        x-transition:leave-end="opacity-0"
+      ></div>
     </div>
   </body>
 </html>

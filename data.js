@@ -1,3 +1,16 @@
+const populateHeroCounters = (heroIdArray) => {
+  const heroCounters = [];
+
+  heroIdArray.forEach((id) => {
+    const hero = HERO_DATA.find((hero) => hero.id === id);
+    if (hero !== undefined) {
+      heroCounters.push(hero.avatarUrl);
+    }
+  });
+
+  return heroCounters;
+};
+
 const buildData = (heroes) => {
   const roleArray = [];
   // organizing the hero data by role
@@ -5,6 +18,11 @@ const buildData = (heroes) => {
     const heroesFilteredByRole = heroes.filter(
       (hero) => hero.role === role.name
     );
+    heroesFilteredByRole.forEach((hero) => {
+      hero.strongAgainstHeroes = populateHeroCounters(hero.strongAgainstIds);
+      hero.weakAgainstHeroes = populateHeroCounters(hero.weakAgainstIds);
+      hero.role = ROLES.find((role) => role.name === hero.role);
+    });
 
     roleArray.push({ roleName: role.label, heroes: heroesFilteredByRole });
   });
@@ -16,6 +34,8 @@ const data = () => {
   return {
     data: {
       roles: buildData(HERO_DATA),
+      isOpen: false,
+      currentHero: {},
     },
   };
 };
@@ -34,11 +54,32 @@ const HERO_DATA = [
     name: "Doomfist",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Hand Cannon",
+        description: "Short-range weapon with spread. Reloads automatically.",
+      },
+      {
+        name: "Rocket Punch",
+        description:
+          "Hold to charge then release to launch forward and knock an enemy back. Damage increase if the enemy hits a wall.",
+      },
+      {
+        name: "Seismic Slam",
+        description: "Leap and smash the ground.",
+      },
+      {
+        name: "Power Block",
+        description:
+          "Protect yourself from frontal attacks. Blocking heavy damage empowers Rocket Punch.",
+      },
+      {
+        name: "Meteor Strike (Ultimate)",
+        description:
+          "Leap up into the air. Move the targeting circle, then strike the targeted area.",
+      },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [4, 29],
+    weakAgainstIds: [29, 24, 1, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -48,11 +89,42 @@ const HERO_DATA = [
     name: "D.Va",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Fusion Cannons",
+        description: "Automatic short-range spread weapons.",
+      },
+      {
+        name: "Light Gun",
+        description: "Automatic weapon when D.Va is out of her mech.",
+      },
+      {
+        name: "Boosters",
+        description: "Fly in the direction you are facing.",
+      },
+      {
+        name: "Defense Matrix",
+        description: "Block projectiles in an area in front of you.",
+      },
+      {
+        name: "Micro Missiles",
+        description: "Launch a volley of explosive rockets.",
+      },
+      {
+        name: "Self-Destruct (Ultimate)",
+        description:
+          "Eject and overload your mech, causing it to explode after a short time.",
+      },
+      {
+        name: "Call Mech",
+        description: "Call down a new mech.",
+      },
+      {
+        name: "Eject!",
+        description: "Eject out of your mech when it is destroyed.",
+      },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 20, 24, 22, 12, 18, 21, 29, 32, 36, 37],
+    weakAgainstIds: [11, 25, 24, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -62,11 +134,27 @@ const HERO_DATA = [
     name: "Mauga",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Overrun",
+        description:
+          "Charge forward and stomp to launch enemies. You are unstoppable while charging.",
+      },
+      {
+        name: "Cardiac Overdrive",
+        description:
+          "Nearby allies take reduced damage and heal by dealing damage.",
+      },
+      {
+        name: "Berkerker",
+        description: "Gain temporary health when dealing critical damage.",
+      },
+      {
+        name: "Cage Fight (Ultimate)",
+        description: "Deploy a barrier that traps yourself and enemies.",
+      },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [12, 15, 5, 9, 34, 35],
+    weakAgainstIds: [1, 8, 13, 29, 33],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -76,11 +164,34 @@ const HERO_DATA = [
     name: "Junker Queen",
     role: "tank",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      { name: "Scattergun", description: "Pump action shotgun." },
+      {
+        name: "Jagged Blade",
+        description:
+          "Active: Throw a blade. Re-activate to pull it back, along with any impaled enemy. Passive: Wound enemies hit, dealing damage over time.",
+      },
+      {
+        name: "Commanding Shout",
+        description:
+          "Grants temporary health and movement speed to yourself and allies.",
+      },
+      {
+        name: "Carnage",
+        description:
+          "Wound all enemies in front of you, dealing damage over time and reducing the cooldown for each enemy hit.",
+      },
+      {
+        name: "Rampage (Ultimate)",
+        description:
+          "Charge forward. Wounds enemies, dealing damage over time and preventing them from being healed.",
+      },
+      {
+        name: "Adrenaline Rush",
+        description: "Heal from all damage over time dealt by wounds.",
+      },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [15],
+    weakAgainstIds: [7, 19, 33],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -93,8 +204,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -107,8 +218,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -121,8 +232,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -135,8 +246,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -149,8 +260,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -163,8 +274,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -177,8 +288,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -191,8 +302,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -206,8 +317,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -220,8 +331,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -234,8 +345,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -248,8 +359,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -262,8 +373,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -276,8 +387,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -290,8 +401,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -304,8 +415,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -318,8 +429,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -332,8 +443,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -346,8 +457,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -360,8 +471,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -374,8 +485,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -388,8 +499,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -402,8 +513,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -416,8 +527,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -430,8 +541,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -445,8 +556,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -459,8 +570,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -473,8 +584,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -487,8 +598,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -501,8 +612,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -515,8 +626,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -529,8 +640,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -543,8 +654,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -557,8 +668,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -571,8 +682,8 @@ const HERO_DATA = [
       { name: "ability one", description: "this is description" },
       { name: "ability two", description: "this is description 2" },
     ],
-    goodAgainst: [0, 1, 2, 3],
-    counteredBy: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 2, 3],
+    weakAgainstIds: [0, 2, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 ];

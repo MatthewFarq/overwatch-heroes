@@ -16,6 +16,14 @@ tailwind.config = {
           "0px 4px 16px 0px rgba(0, 0, 0, 0.1)",
         ],
       },
+      colors: {
+        transparent: {
+          900: "rgba(51, 65, 85, 0.50)",
+        },
+      },
+      transitionTimingFunction: {
+        gentle: "cubic-bezier(0.38, 0, 0.25, 0.99)",
+      },
     },
   },
 };
