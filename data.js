@@ -604,11 +604,32 @@ const HERO_DATA = [
     name: "Genji",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Shuriken",
+        description:
+          "Primary fire: Throw an accurate burst of 3 projectiles. Secondary fire: Throw a fay of 3 projectiles in an arc.",
+      },
+      {
+        name: "Deflect",
+        description:
+          "Deflect incoming projectiles towards the direction you are aiming and block melee attacks.",
+      },
+      {
+        name: "Swift Strike",
+        description:
+          "Rapidly dash forward and inflict damage on enemies. Eliminations reset the cooldown.",
+      },
+      {
+        name: "Dragonblade (Ultimate)",
+        description: "Unsheathe a deadly melee weapon",
+      },
+      {
+        name: "Cyber-Agility",
+        description: "Climb on walls and double jump",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [0, 8, 11, 12, 17, 28, 38],
+    weakAgainstIds: [9, 11, 19, 25, 35, 37],
     wikiPageUrl: "https://oijgdfigj",
   },
 
