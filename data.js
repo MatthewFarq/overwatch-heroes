@@ -565,11 +565,36 @@ const HERO_DATA = [
     name: "Echo",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Tri-Shot",
+        description: "Fires 3 shots at once, in a triagle patter.",
+      },
+      {
+        name: "Sticky Bombs",
+        description:
+          "Fire a volley of sticky bombs that detonate after a delay.",
+      },
+      {
+        name: "Flight",
+        description: "Fly forward quickly and then free-fly briefly",
+      },
+      {
+        name: "Focusing Beam",
+        description:
+          "Channel a beam for a few seconds. Deals very high damage to targets under half health.",
+      },
+      {
+        name: "Duplicate (Ultimate)",
+        description:
+          "Become a copy of the target enemy hero. They cannot swap heroes for the duration.",
+      },
+      {
+        name: "Glide",
+        description: "Hold jump to glide while falling.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [33],
+    weakAgainstIds: [7, 23, 30],
     wikiPageUrl: "https://oijgdfigj",
   },
 
