@@ -505,7 +505,7 @@ const HERO_DATA = [
     abilities: [
       {
         name: "Configuration: Assault",
-        description: "tA slow-moving tank with a powerful rotary cannon.",
+        description: "A slow-moving tank with a powerful rotary cannon.",
       },
       {
         name: "Configuration: Recon",
@@ -533,11 +533,29 @@ const HERO_DATA = [
     name: "Cassidy",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Peacekeepr",
+        description:
+          "Primary fire: Accurate, powerful revolver. Secondary fire: Wildly fire remaining rounds.",
+      },
+      {
+        name: "Combat Roll",
+        description:
+          "Roll in the direction you're moving to take reduced damage and reload.",
+      },
+      {
+        name: "Magnetic Grenade",
+        description:
+          "Throw a homing gredade that sticks to enemies, slowing them and preventing them from using movement abilities.",
+      },
+      {
+        name: "Deadeye (Ultimate)",
+        description:
+          "Face off against your enemies. Lock on to enemies and fire.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [20, 36],
+    weakAgainstIds: [4, 23, 37],
     wikiPageUrl: "https://oijgdfigj",
   },
 
