@@ -639,11 +639,35 @@ const HERO_DATA = [
     name: "Hanzo",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Storm Bow",
+        description: "Hold to charge then release to launch arrows farther.",
+      },
+      {
+        name: "Storm Arrows",
+        description:
+          "The next 5 arrows ricochet and fire instantly at reduced damage.",
+      },
+      {
+        name: "Sonic Arrows",
+        description: "Reveals enemies for a short time upon impact.",
+      },
+      {
+        name: "Lunge",
+        description: "Double jump.",
+      },
+      {
+        name: "Dragonstrike (Ultimate)",
+        description:
+          "Launch a deadly Dragon Spirit that devastates enemies it passes through.",
+      },
+      {
+        name: "Wall Climb",
+        description: "Jump at walls to climb up them.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [19, 21, 22, 24, 26],
+    weakAgainstIds: [1, 22, 28, 33],
     wikiPageUrl: "https://oijgdfigj",
   },
 
