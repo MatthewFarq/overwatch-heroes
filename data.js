@@ -677,11 +677,29 @@ const HERO_DATA = [
     name: "Junkrat",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Frag Launcher",
+        description: "Bouncing explosive projectile weapon.",
+      },
+      {
+        name: "Concussion Mine",
+        description: "Throw a knockback mine then detonate it.",
+      },
+      {
+        name: "Steel Trap",
+        description: "Place an immobilizing trap.",
+      },
+      {
+        name: "Rip-Tire (Ultimate)",
+        description: "Drive and detonate an exploding tire.",
+      },
+      {
+        name: "Total Mayhem",
+        description: "Drop bombs on death.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [6, 31],
+    weakAgainstIds: [1, 11, 20, 30],
     wikiPageUrl: "https://oijgdfigj",
   },
 
@@ -691,11 +709,27 @@ const HERO_DATA = [
     name: "Mei",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Endothermic Blaster",
+        description:
+          "Primary fire: Short-range spray weapon that slows enemies. Secondary fire: Lng-range icicle launcher.",
+      },
+      {
+        name: "Cryo-Freeze",
+        description: "Become invulnerable and heal yourself.",
+      },
+      {
+        name: "Ice Wall",
+        description: "Create a wall in front of you.",
+      },
+      {
+        name: "Blizzard (Ultimate)",
+        description:
+          "Launch a weather control drone that freezes enemies in a wide area.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [10, 16, 27, 35],
+    weakAgainstIds: [4, 17, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
