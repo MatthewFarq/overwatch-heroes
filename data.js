@@ -739,11 +739,30 @@ const HERO_DATA = [
     name: "Phara",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Rocket Launcher",
+        description: "Long-range explosive projectile weapon.",
+      },
+      { name: "Jet Dash", description: "Boost horizontally." },
+      {
+        name: "Jump Jet",
+        description: "Fly rapidly upwards. Grants some fuel.",
+      },
+      {
+        name: "Concussive Blast",
+        description: "Launch an explosive blast to knock back enemies.",
+      },
+      {
+        name: "Barrage (Ultimate)",
+        description: "Launch a continuous volley of mini-rockets.",
+      },
+      {
+        name: "Hover Jets",
+        description: "Hold to hover in the air.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [4, 6, 18, 21, 25, 31, 38],
+    weakAgainstIds: [1, 12, 14, 23, 28, 29, 30],
     wikiPageUrl: "https://oijgdfigj",
   },
 
