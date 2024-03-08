@@ -836,11 +836,23 @@ const HERO_DATA = [
     name: "Soldier: 76",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      { name: "Heavy Pulse Rifle", description: "Automatic assault weapon." },
+      {
+        name: "Helix Rockets",
+        description: "Launch a volley of explosive rockets.",
+      },
+      { name: "Sprint", description: "Run faster while moving forward." },
+      {
+        name: "Biotic Field",
+        description: "Deploy a field that heals you and your allies.",
+      },
+      {
+        name: "Tactical Visor (Ultimate)",
+        description: "Automatically aims your weapon at targets in view.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [15, 18, 20, 3],
+    weakAgainstIds: [9, 16, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
