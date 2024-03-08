@@ -799,14 +799,34 @@ const HERO_DATA = [
   {
     id: 22,
     avatarUrl: "./assets/avatar-sojourn.png",
-    name: "Sojour",
+    name: "Sojourn",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Railgun",
+        description: "Rapid firing projectiles that generate energy on hit.",
+      },
+      {
+        name: "Railgun Alt Fire",
+        description: "High impact shot that consumes stored energy.",
+      },
+      {
+        name: "Power Slide",
+        description: "Ground slide that can cancel into a high jump.",
+      },
+      {
+        name: "Disruptor Shot",
+        description:
+          "Launch an energy burst that deals damage to enemies within it.",
+      },
+      {
+        name: "Overclock (Ultimate)",
+        description:
+          "Railgun energy auto-charges for a short duration and charged shots pierce enemies.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [17, 22],
+    weakAgainstIds: [1, 17, 22, 28, 36],
     wikiPageUrl: "https://oijgdfigj",
   },
 
