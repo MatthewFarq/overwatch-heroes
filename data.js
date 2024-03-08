@@ -772,11 +772,27 @@ const HERO_DATA = [
     name: "Reaper",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      { name: "Hellfire Shotguns", description: "Short-range spread weapons." },
+      {
+        name: "Wraith Form",
+        description:
+          "Move faster and become invulnerable, but you cannot shoot.",
+      },
+      {
+        name: "Shadow Step",
+        description: "Teleport to a targeted location.",
+      },
+      {
+        name: "Death Blossom (Ultimate)",
+        description: "Damage all nearby enemies.",
+      },
+      {
+        name: "The Reaping",
+        description: "Dealing damage heals you.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [5, 7, 10],
+    weakAgainstIds: [1, 15, 17, 20, 29, 38],
     wikiPageUrl: "https://oijgdfigj",
   },
 
