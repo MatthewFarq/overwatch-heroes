@@ -1013,11 +1013,34 @@ const HERO_DATA = [
     name: "Widowmaker",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Widow's Kiss",
+        description:
+          "Should targets be in close to medium range, the rifle can also be fired in fully-automatic mode.",
+      },
+      {
+        name: "Widow's Kiss (ADS)",
+        description:
+          "Widowmaker’s versatile sniper rifle is ideal for scope-aimed shots at distant targets.",
+      },
+      {
+        name: "Grappling Hook",
+        description:
+          "Widowmaker launches a grappling hook towards the location she’s aiming at – when the hook connects with a scalable surface, she’s quickly drawn towards it, allowing her to expand her view of the battlefield and evade or flank targets.",
+      },
+      {
+        name: "Venom Mine",
+        description:
+          "Widowmaker adheres a swiftly-arming venom mine to nearly any surface. When a target wanders within range of the mine’s motion trigger, it explodes, delivering poison gas to any enemies in the vicinity.",
+      },
+      {
+        name: "Infra-Sight (Ultimate)",
+        description:
+          "Widowmaker’s recon visor allows her to see the heat signatures of her targets through walls and objects for a moderate amount of time. This enhanced vision is shared with her allies.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [3, 11, 12, 17, 20, 22, 30, 33],
+    weakAgainstIds: [9, 12, 16, 24, 27, 28, 3, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
