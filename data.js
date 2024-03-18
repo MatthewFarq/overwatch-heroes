@@ -904,11 +904,34 @@ const HERO_DATA = [
     name: "Symmetra",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Photon Projector",
+        description:
+          "Symmetra’s weapon emits a ranged beam. It deals continuous damage that increases the longer it is connected.",
+      },
+      {
+        name: "Photon Projector Alt Fire",
+        description:
+          "The projector can also release an explosive energy ball that deals high damage on contact.",
+      },
+      {
+        name: "Sentry Turret",
+        description:
+          "Symmetra launches a small turret that automatically fires speed-reducing blasts at the nearest enemy within range. Up to three turrets can be built on the battlefield at once.",
+      },
+      {
+        name: "Teleporter",
+        description:
+          "Symmetra places a temporary teleporter exit pad at a distance and connects it to a teleporter entry pad at her current location. Allies (and some of their abilities, such as Junkrat’s RIP-Tire) can travel from the entry pad to the exit pad instantly.",
+      },
+      {
+        name: "Photon Barrier (Ultimate)",
+        description:
+          "Symmetra deploys a massive energy barrier which prevents ranged attacks and is big enough to cut through the entire map.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [1, 4, 16, 27, 35],
+    weakAgainstIds: [11, 20, 37],
     wikiPageUrl: "https://oijgdfigj",
   },
 
