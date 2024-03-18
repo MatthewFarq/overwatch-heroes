@@ -851,7 +851,7 @@ const HERO_DATA = [
         description: "Automatically aims your weapon at targets in view.",
       },
     ],
-    strongAgainstIds: [15, 18, 20, 3],
+    strongAgainstIds: [15, 18, 20],
     weakAgainstIds: [9, 16, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
@@ -862,11 +862,39 @@ const HERO_DATA = [
     name: "Sombra",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Stealth",
+        description:
+          "Sombra becomes invisible and her speed is boosted considerably. Attacking, using offensive abilities, or taking damage disables her camouflage.",
+      },
+      {
+        name: "Machine Pistol",
+        description:
+          "Sombra’s fully-automatic machine pistol fires in a short-range spread.",
+      },
+      {
+        name: "Hack",
+        description:
+          "Sombra hacks enemies to temporarily stop them from using their abilities, or hacks first aid kits to make them useless to her opponents.",
+      },
+      {
+        name: "Virus",
+        description:
+          "Infect enemies with a projectile that deals damage over time. Virus damages hacked targets at a faster rate.",
+      },
+      {
+        name: "Translocator",
+        description:
+          "Sombra tosses out a translocator beacon. She can instantly return to the beacon’s location while it is active (including when it’s in mid-flight).",
+      },
+      {
+        name: "EMP (Ultimate)",
+        description:
+          "Sombra discharges electromagnetic energy in a wide radius, damaging shields, health, and hacking all opponents caught in the blast.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [0, 1, 6, 7, 8, 10, 31, 33, 34, 35],
+    weakAgainstIds: [1, 9, 17, 31],
     wikiPageUrl: "https://oijgdfigj",
   },
 
