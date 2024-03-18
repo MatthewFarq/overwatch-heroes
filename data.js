@@ -982,11 +982,28 @@ const HERO_DATA = [
     name: "Tracer",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Pulse Pistols",
+        description: "Tracer rapid-fires both of her pistols.",
+      },
+      {
+        name: "Blink",
+        description:
+          "Tracer zips horizontally through space in the direction she’s moving, and reappears several yards away. She stores up to three charges of the blink ability and generates more every few seconds.",
+      },
+      {
+        name: "Recall",
+        description:
+          "Tracer bounds backward in time, returning her health, ammo and position on the map to precisely where they were a few seconds before.",
+      },
+      {
+        name: "Pulse Bomb (Ultimate)",
+        description:
+          "Tracer lobs a large bomb that adheres to any surface or unfortunate opponent it lands on. After a brief delay, the bomb explodes, dealing high damage to all enemies within its blast radius.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [5, 8, 13, 38],
+    weakAgainstIds: [7, 9, 25, 26, 19, 33, 37],
     wikiPageUrl: "https://oijgdfigj",
   },
 
