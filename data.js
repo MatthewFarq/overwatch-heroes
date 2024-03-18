@@ -941,11 +941,38 @@ const HERO_DATA = [
     name: "Torbjorn",
     role: "dps",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Rivet Gun",
+        description: "Torbjörn fires rivets at long range.",
+      },
+      {
+        name: "Rivet Gun Alt Fire",
+        description:
+          "Torbjörn ejects molten metal from his gun in a short, close-range burst.",
+      },
+      {
+        name: "Forge Hammer",
+        description:
+          "This multipurpose hammer repairs turrets and, in a pinch, can also be used as a weapon.",
+      },
+      {
+        name: "Deploy Turret",
+        description:
+          "Torbjörn deploys a self-building turret which automatically tracks and attacks enemies.",
+      },
+      {
+        name: "Overload",
+        description:
+          "Torbjörn gains overhealth as well as improved attack, movement, and reload speed for a brief period.",
+      },
+      {
+        name: "Molten Core (Ultimate)",
+        description:
+          "Torbjörn creates pools of molten slag that deal massive, sustained damage (plus bonus damage to armor), and can prevent enemies from moving through key locations.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [27, 35, 37],
+    weakAgainstIds: [5, 15, 17, 20, 38],
     wikiPageUrl: "https://oijgdfigj",
   },
 
