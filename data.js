@@ -1040,7 +1040,7 @@ const HERO_DATA = [
       },
     ],
     strongAgainstIds: [3, 11, 12, 17, 20, 22, 30, 33],
-    weakAgainstIds: [9, 12, 16, 24, 27, 28, 3, 4],
+    weakAgainstIds: [9, 12, 16, 24, 27, 28, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
