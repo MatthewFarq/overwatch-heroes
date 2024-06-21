@@ -1051,11 +1051,29 @@ const HERO_DATA = [
     name: "Ana",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Biotic Rifle",
+        description:
+          "Ana’s rifle shoots darts that can restore health to her allies or deal ongoing damage to her enemies. She can use the rifle’s scope to zoom in on targets and make highly accurate shots.",
+      },
+      {
+        name: "Sleep Dart",
+        description:
+          "Ana fires a dart from her sidearm, rendering an enemy unconscious (though any damage will rouse them).",
+      },
+      {
+        name: "Biotic Grenade",
+        description:
+          "Ana tosses a biotic bomb that deals damage to enemies and heals allies in a small area of effect. Affected allies briefly receive increased healing from all sources, while enemies caught in the blast cannot be healed for a few moments. Passes through allies with full health.",
+      },
+      {
+        name: "Nano Boost",
+        description:
+          "After Ana hits one of her allies with a combat boost, they temporarily deal more damage and take less damage from enemies’ attacks. Nano will not activate if Ana dies or is stunned during cast time.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [0, 5, 6, 7, 10, 20, 30, 36, 37, 38],
+    weakAgainstIds: [1, 9, 12, 33],
     wikiPageUrl: "https://oijgdfigj",
   },
 
