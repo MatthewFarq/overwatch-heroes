@@ -1067,7 +1067,7 @@ const HERO_DATA = [
           "Ana tosses a biotic bomb that deals damage to enemies and heals allies in a small area of effect. Affected allies briefly receive increased healing from all sources, while enemies caught in the blast cannot be healed for a few moments. Passes through allies with full health.",
       },
       {
-        name: "Nano Boost",
+        name: "Nano Boost (Ultimate)",
         description:
           "After Ana hits one of her allies with a combat boost, they temporarily deal more damage and take less damage from enemies’ attacks. Nano will not activate if Ana dies or is stunned during cast time.",
       },
@@ -1083,11 +1083,34 @@ const HERO_DATA = [
     name: "Baptiste",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Exo Boots",
+        description: "By first crouching, Baptiste can jump higher.",
+      },
+      {
+        name: "Biotic Launcher",
+        description:
+          "Baptiste’s three-round-burst Biotic Launcher rewards accuracy and recoil control with significant damage output.",
+      },
+      {
+        name: "Biotic Launcher Alt Fire",
+        description:
+          "Biotic Launcher also doubles as a healing device, lobbing projectiles that heal allies near the point of impact.",
+      },{
+        name: "Regenerative Burst",
+        description:
+          "Baptiste activates an intense regenerative burst that heals nearby allies and himself over time.",
+      },{
+        name: "Immortality Field",
+        description:
+          "Baptiste uses a device to create a field that prevents allies from dying. The generator can be destroyed.",
+      },{
+        name: "Amplification Matrix (Ultimate)",
+        description:
+          "Baptiste creates a matrix that doubles the damage and healing effects of friendly projectiles that pass through it.",
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [8, 11, 15, 18, 31],
+    weakAgainstIds: [7, 28, 29],
     wikiPageUrl: "https://oijgdfigj",
   },
 
