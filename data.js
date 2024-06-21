@@ -1096,18 +1096,22 @@ const HERO_DATA = [
         name: "Biotic Launcher Alt Fire",
         description:
           "Biotic Launcher also doubles as a healing device, lobbing projectiles that heal allies near the point of impact.",
-      },{
+      },
+      {
         name: "Regenerative Burst",
         description:
           "Baptiste activates an intense regenerative burst that heals nearby allies and himself over time.",
-      },{
+      },
+      {
         name: "Immortality Field",
         description:
           "Baptiste uses a device to create a field that prevents allies from dying. The generator can be destroyed.",
-      },{
+      },
+      {
         name: "Amplification Matrix (Ultimate)",
         description:
           "Baptiste creates a matrix that doubles the damage and healing effects of friendly projectiles that pass through it.",
+      },
     ],
     strongAgainstIds: [8, 11, 15, 18, 31],
     weakAgainstIds: [7, 28, 29],
