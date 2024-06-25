@@ -1124,11 +1124,43 @@ const HERO_DATA = [
     name: "Brigitte",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Rocket Flail",
+        description:
+          "Brigitte's melee weapon has an extended range, enabling her to strike multiple enemies with a single swing.",
+      },
+      {
+        name: "Repair Pack",
+        description: "Brigitte throws a Repair Pack that can heal an ally.",
+      },
+      {
+        name: "Whip Shot",
+        description:
+          "Brigitte uses her Rocket Flail to knock back any enemy in a 20 meter range, also dealing a bit of damage while slowing her down.",
+      },
+      {
+        name: "Barrier Shield",
+        description:
+          "Brigitte deploys a frontal energy barrier to absorb a limited amount of damage.",
+      },
+      {
+        name: "Shield Bash",
+        description:
+          "Once her Barrier Shield is deployed, Brigitte can dash forward to knock the enemy back, and activate Inspire.",
+      },
+      {
+        name: "Inspire",
+        description:
+          "Upon hitting an enemy player, Brigitte will passively heal herself and her teammates over a course of 5 seconds.",
+      },
+      {
+        name: "Rally (Ultimate)",
+        description:
+          "Brigitte moves faster and provides all nearby allies with overhealth that lasts for 30 seconds or until it’s removed by damage, Brigitte also gains 750 shield HP, increased shield length, shield bash stun, and gains 100 healable armor instantly.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [0, 9, 10, 16, 24, 27],
+    weakAgainstIds: [13, 15, 17, 18, 20],
     wikiPageUrl: "https://oijgdfigj",
   },
 
