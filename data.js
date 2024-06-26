@@ -1323,11 +1323,44 @@ const HERO_DATA = [
     name: "Mercy",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Caduceus Staff (Heal)",
+        description:
+          "Mercy engages one of two beams that connect to an ally. By maintaining the beams, she can either restore that ally’s health or increase the amount of damage they deal.",
+      },
+      {
+        name: "Caduceus Staff (Damage boost)",
+        description:
+          "Mercy engages one of two beams that connect to an ally. By maintaining the beams, she can either restore that ally’s health or increase the amount of damage they deal.",
+      },
+      {
+        name: "Caduceus Blaster",
+        description:
+          "Mercy shoots a round from her sidearm. It's best reserved for emergency personal defense.",
+      },
+      {
+        name: "Guardian Angel",
+        description:
+          "Mercy flies towards a targeted ally, allowing her to reach them quickly and provide assistance in crucial moments.",
+      },
+      {
+        name: "Resurrect",
+        description:
+          "Mercy brings a dead ally back into the fight with full health.",
+      },
+      {
+        name: "Angelic Descent",
+        description:
+          "Propelled by her Valkyrie suit, Mercy slows the speed of her descent from great heights.",
+      },
+      {
+        name: "Valkyrie (Ultimate)",
+        description:
+          "Gain the ability to fly. Mercy’s abilities are enhanced..",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [9, 22],
+    weakAgainstIds: [1, 7, 9, 14, 28, 29],
     wikiPageUrl: "https://oijgdfigj",
   },
 
