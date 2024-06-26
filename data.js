@@ -1204,11 +1204,36 @@ const HERO_DATA = [
     name: "Kiriko",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Healing Ofuda",
+        description:
+          "Channel a burst of healing talismans that can seek targeted allies.",
+      },
+      {
+        name: "Kunai",
+        description: "Thrown projectile that deals increased critical damage.",
+      },
+      {
+        name: "Swift Step",
+        description: "Teleport directly to an ally, even through walls.",
+      },
+      {
+        name: "Protection Suzu",
+        description:
+          "Upon impact, allies in the area become briefly invulnerable and are cleansed of most negative effects.",
+      },
+      {
+        name: "Wall Climb",
+        description: "Jump at walls to climb up them.",
+      },
+      {
+        name: "Kitsune Rush",
+        description:
+          "Summon a fox spirit that rushes forward, accelerating the movement, attack speed, and cooldowns of allies that follow its path.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [2, 3, 12, 19, 24, 29],
+    weakAgainstIds: [7, 9, 15, 16, 19, 20, 24, 27, 28],
     wikiPageUrl: "https://oijgdfigj",
   },
 
