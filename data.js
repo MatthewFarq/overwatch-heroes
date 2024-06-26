@@ -1355,8 +1355,7 @@ const HERO_DATA = [
       },
       {
         name: "Valkyrie (Ultimate)",
-        description:
-          "Gain the ability to fly. Mercy’s abilities are enhanced..",
+        description: "Gain the ability to fly. Mercy’s abilities are enhanced.",
       },
     ],
     strongAgainstIds: [9, 22],
@@ -1370,11 +1369,28 @@ const HERO_DATA = [
     name: "Moira",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Biotic Grasp",
+        description:
+          "Using her left hand, Moira expends biotic energy to heal allies in front of her. Her right hand fires a long-range beam weapon that saps enemies’ health, healing Moira and replenishing her biotic energy.",
+      },
+      {
+        name: "Biotic Orb",
+        description:
+          "Moira launches a rebounding biotic sphere; she can choose between a regeneration effect that heals the allies it passes through, or a decay effect that deals damage to enemies.",
+      },
+      {
+        name: "Fade",
+        description: "Moira quickly teleports a short distance.",
+      },
+      {
+        name: "Coalescence (Ultimate)",
+        description:
+          "Moira channels a long-range beam that both heals allies and bypasses barriers to damage her enemies. Resource regeneration is three times higher while channeling Coalescence.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [1, 4, 5, 15, 16, 27, 35],
+    weakAgainstIds: [1, 11, 14, 26, 29],
     wikiPageUrl: "https://oijgdfigj",
   },
 
