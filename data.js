@@ -1243,11 +1243,37 @@ const HERO_DATA = [
     name: "Lifeweaver",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Healing Blossom",
+        description:
+          "Hold to charge a healing burst. Realease to heal a targeted ally.",
+      },
+      {
+        name: "Thorn Volley",
+        description: "Rapidly fire a spread of projectiles.",
+      },
+      {
+        name: "Petal Platform",
+        description: "Throw a platform that springs upwards when stepped on.",
+      },
+      {
+        name: "Rejuventating Dash",
+        description:
+          "Dash towards your traveling direction and lightly heal yourself.",
+      },
+      {
+        name: "Life Grip",
+        description:
+          "Pull an ally to your location, protecting them as they travel.",
+      },
+      {
+        name: "Tree of Life (Ultimate)",
+        description:
+          "Place a tree that instantly heals allies upon sprouting and continues healing periodically as it lives.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [18, 32],
+    weakAgainstIds: [23, 24, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
