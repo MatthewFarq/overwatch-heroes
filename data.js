@@ -1313,7 +1313,7 @@ const HERO_DATA = [
       },
     ],
     strongAgainstIds: [1, 8, 12, 16, 18, 19, 23, 28, 30],
-    weakAgainstIds: [5, 14, 19, 23, 24, 25, 26, 37, 4],
+    weakAgainstIds: [5, 7, 9, 14, 19, 23, 24, 25, 26, 37],
     wikiPageUrl: "https://oijgdfigj",
   },
 
