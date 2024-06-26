@@ -803,11 +803,11 @@ const HERO_DATA = [
     role: "dps",
     abilities: [
       {
-        name: "Railgun",
+        name: "Railgun (Primary)",
         description: "Rapid firing projectiles that generate energy on hit.",
       },
       {
-        name: "Railgun Alt Fire",
+        name: "Railgun (Secondary)",
         description: "High impact shot that consumes stored energy.",
       },
       {
@@ -905,12 +905,12 @@ const HERO_DATA = [
     role: "dps",
     abilities: [
       {
-        name: "Photon Projector",
+        name: "Photon Projector (Primary)",
         description:
           "Symmetra’s weapon emits a ranged beam. It deals continuous damage that increases the longer it is connected.",
       },
       {
-        name: "Photon Projector Alt Fire",
+        name: "Photon Projector (Secondary)",
         description:
           "The projector can also release an explosive energy ball that deals high damage on contact.",
       },
@@ -942,11 +942,11 @@ const HERO_DATA = [
     role: "dps",
     abilities: [
       {
-        name: "Rivet Gun",
+        name: "Rivet Gun (Primary)",
         description: "Torbjörn fires rivets at long range.",
       },
       {
-        name: "Rivet Gun Alt Fire",
+        name: "Rivet Gun (Secondary)",
         description:
           "Torbjörn ejects molten metal from his gun in a short, close-range burst.",
       },
@@ -1088,12 +1088,12 @@ const HERO_DATA = [
         description: "By first crouching, Baptiste can jump higher.",
       },
       {
-        name: "Biotic Launcher",
+        name: "Biotic Launcher (Primary)",
         description:
           "Baptiste’s three-round-burst Biotic Launcher rewards accuracy and recoil control with significant damage output.",
       },
       {
-        name: "Biotic Launcher Alt Fire",
+        name: "Biotic Launcher (Secondary)",
         description:
           "Biotic Launcher also doubles as a healing device, lobbing projectiles that heal allies near the point of impact.",
       },
@@ -1170,11 +1170,31 @@ const HERO_DATA = [
     name: "Illari",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Solar Rifle (Primary)",
+        description: "Long range auto-charging rifle.",
+      },
+      {
+        name: "Solar Rifle (Secondary)",
+        description: "Medium range healing beam that consumes solar energy.",
+      },
+      {
+        name: "Outburst",
+        description:
+          "Launches you in the direction you are moving. Knocking back enemies. Hold jump to go higher.",
+      },
+      {
+        name: "Healing Pylon",
+        description: "Deploy a pylon that heals allies.",
+      },
+      {
+        name: "Captive Sun (Ultimate)",
+        description:
+          "Fire an explosive ball of solar energy. Enemies hit are slowed and explode after taking significant damage.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [],
+    weakAgainstIds: [1, 4, 11, 12, 14, 16, 28, 30, 33, 34, 35],
     wikiPageUrl: "https://oijgdfigj",
   },
 
