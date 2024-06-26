@@ -1283,11 +1283,37 @@ const HERO_DATA = [
     name: "Lucio",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Sonic Amplifier",
+        description:
+          "Lúcio can hit his enemies with 4 sonic projectiles in a quick burst.",
+      },
+      {
+        name: "Soundwave",
+        description: "Lúcio can knock his enemies back with a blast of sound.",
+      },
+      {
+        name: "Crossfade",
+        description:
+          "Lúcio continuously energizes himself—and nearby teammates—with music. He can switch between two songs: one amplifies movement speed, while the other regenerates health.",
+      },
+      {
+        name: "Amp It Up",
+        description:
+          "Lúcio increases the volume on his speakers, boosting the effects of his songs.",
+      },
+      {
+        name: "Wallride",
+        description: "Jump onto a wall to ride along it.",
+      },
+      {
+        name: "Sound Barrier (Ultimate)",
+        description:
+          "Protective waves radiate out from Lúcio’s Sonic Amplifier, briefly providing him and nearby allies with personal shields.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [1, 8, 12, 16, 18, 19, 23, 28, 30],
+    weakAgainstIds: [5, 14, 19, 23, 24, 25, 26, 37, 4],
     wikiPageUrl: "https://oijgdfigj",
   },
 
