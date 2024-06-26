@@ -1400,11 +1400,29 @@ const HERO_DATA = [
     name: "Zenyatta",
     role: "support",
     abilities: [
-      { name: "ability one", description: "this is description" },
-      { name: "ability two", description: "this is description 2" },
+      {
+        name: "Orb of Destruction",
+        description:
+          "Zenyatta projects his destructive energy orbs either individually, or in a rapid-fire volley after a few seconds spent gathering power.",
+      },
+      {
+        name: "Orb of Harmony",
+        description:
+          "Zenyatta casts an orb over the shoulder of a targeted ally. So long as Zenyatta remains alive, the orb slowly restores health to his ally. Only one ally can receive the orb's benefit at a time. Once target is out of the line of sight of Zenyatta for 3 seconds, the orb is returned.",
+      },
+      {
+        name: "Orb of Discord",
+        description:
+          "Attaching the orb of discord to an opponent amplifies the amount of damage they receive for as long as Zenyatta lives. Only one opponent can suffer the orb's effects at a time. Once target is out of the line of sight of Zenyatta for 3 seconds, the orb is returned.",
+      },
+      {
+        name: "Transcendence (Ultimate)",
+        description:
+          "Zenyatta enters a state of heightened existence for a short period of time. While transcendent, Zenyatta cannot cast abilities or his weapon (existing harmony and discord orbs will stay active as long as the target is in the line of sight of Zenyatta), but is immune to damage, increases his own movement speed, and automatically restores his health and that of nearby allies. Zenyatta is still affected by crowd control that affects movement like Roadhog's chain hook or Brigitte's whip shot.",
+      },
     ],
-    strongAgainstIds: [0, 1, 2, 3],
-    weakAgainstIds: [0, 2, 3, 4],
+    strongAgainstIds: [4, 13, 21, 26],
+    weakAgainstIds: [11, 27, 29],
     wikiPageUrl: "https://oijgdfigj",
   },
 ];
